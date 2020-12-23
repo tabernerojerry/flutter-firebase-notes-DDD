@@ -1,26 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:notes_firebase_ddd/injection.dart';
+import 'package:notes_firebase_ddd/presentation/core/app_widget.dart';
 
-void main() {
+Future<void> main() async {
+  // Need explicit binding before firebase call
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Firebase to work
+  await Firebase.initializeApp();
+  // Inject Dependencies
   configureInjection(Environment.prod);
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Notes",
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Notes App'),
-        ),
-        body: const Center(
-          child: Text('Home'),
-        ),
-      ),
-    );
-  }
+  // Run App
+  runApp(AppWidget());
 }
