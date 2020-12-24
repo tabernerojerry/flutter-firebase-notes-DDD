@@ -33,6 +33,7 @@ class SignInForm extends StatelessWidget {
         return Form(
           autovalidateMode: AutovalidateMode.always,
           child: ListView(
+            padding: const EdgeInsets.all(8.0),
             children: [
               const Icon(
                 Icons.description_outlined,
