@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:notes_firebase_ddd/domain/core/value_objects.dart';
 
-part 'users.freezed.dart';
+part 'auth_user.freezed.dart';
 
 @freezed
-abstract class Users with _$Users {
-  const factory Users({
+abstract class AuthUser with _$AuthUser {
+  const factory AuthUser({
     @required UniqueId id,
-  }) = _Users;
+  }) = _AuthUser;
 }
