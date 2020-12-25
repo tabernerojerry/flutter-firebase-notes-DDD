@@ -34,6 +34,7 @@ dependencies:
   get_it: ^5.0.3
   google_sign_in: ^4.5.6
   injectable: ^1.0.5
+  kt_dart: ^0.8.0
   uuid: ^2.2.2
 
 dev_dependencies:
@@ -42,7 +43,7 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   auto_route_generator: ^0.6.10
-  build_runner:
+  build_runner: null
   freezed: ^0.12.6
   injectable_generator: ^1.0.6
   lint: ^1.5.1
