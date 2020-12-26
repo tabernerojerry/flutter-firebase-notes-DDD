@@ -7,17 +7,5 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/*.freezed.dart": true,
-    "**/*.g.dart": true,
-    "**/*.gr.dart": true,
-    "**/.gitkeep": true
-  },
-  "explorerExclude.backup": null
+  }
 }
