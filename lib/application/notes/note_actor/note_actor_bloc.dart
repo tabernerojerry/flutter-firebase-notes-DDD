@@ -8,6 +8,7 @@ import 'package:notes_firebase_ddd/domain/notes/note_failure.dart';
 
 part 'note_actor_event.dart';
 part 'note_actor_state.dart';
+
 part 'note_actor_bloc.freezed.dart';
 
 class NoteActorBloc extends Bloc<NoteActorEvent, NoteActorState> {

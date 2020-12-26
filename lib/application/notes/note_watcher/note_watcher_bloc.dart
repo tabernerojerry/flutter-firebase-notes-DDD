@@ -11,6 +11,7 @@ import 'package:notes_firebase_ddd/domain/notes/note_failure.dart';
 
 part 'note_watcher_event.dart';
 part 'note_watcher_state.dart';
+
 part 'note_watcher_bloc.freezed.dart';
 
 @injectable
