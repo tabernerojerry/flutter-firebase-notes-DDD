@@ -15,6 +15,14 @@ abstract class ValueObject<T> {
     return value.fold((fail) => throw UnExpectedValueError(fail), id);
   }
 
+  // Getter to eliminate types in validation failureOption
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (failure) => left(failure),
+      (_) => right(unit),
+    );
+  }
+
   bool isValid() => value.isRight();
 
   @override
