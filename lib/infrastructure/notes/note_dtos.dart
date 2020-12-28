@@ -21,7 +21,7 @@ abstract class NoteDTO implements _$NoteDTO {
     @required int color,
     @required List<TodoItemDTO> todos,
     // Specific for firestore Placeholder -> Time to server (DATETIME)
-    @required @ServerTimestampConverter() FieldValue serverTimestamp,
+    @required @ServerTimestampConverter() FieldValue serverTimeStamp,
   }) = _NoteDTO;
 
   factory NoteDTO.fromDomain(Note note) {
@@ -35,7 +35,7 @@ abstract class NoteDTO implements _$NoteDTO {
             (todoItem) => TodoItemDTO.fromDomain(todoItem),
           )
           .asList(),
-      serverTimestamp: FieldValue.serverTimestamp(),
+      serverTimeStamp: FieldValue.serverTimestamp(),
     );
   }
 
@@ -52,8 +52,8 @@ abstract class NoteDTO implements _$NoteDTO {
   factory NoteDTO.fromJson(Map<String, dynamic> json) =>
       _$NoteDTOFromJson(json);
 
-  factory NoteDTO.fromFirestore(DocumentSnapshot document) {
-    return NoteDTO.fromJson(document.data()).copyWith(id: document.id);
+  factory NoteDTO.fromFirestore(DocumentSnapshot doc) {
+    return NoteDTO.fromJson(doc.data()).copyWith(id: doc.id);
   }
 }
 

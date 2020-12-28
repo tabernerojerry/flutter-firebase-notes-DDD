@@ -25,7 +25,7 @@ Either<ValueFailure<String>, String> validateMaxStringLength(
   String input,
   int maxLength,
 ) {
-  if (input.length >= maxLength) {
+  if (input.length <= maxLength) {
     return right(input);
   } else {
     return left(ValueFailure.exceedingLength(

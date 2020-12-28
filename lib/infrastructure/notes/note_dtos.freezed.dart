@@ -22,13 +22,13 @@ class _$NoteDTOTearOff {
       @required String body,
       @required int color,
       @required List<TodoItemDTO> todos,
-      @required @ServerTimestampConverter() FieldValue serverTimestamp}) {
+      @required @ServerTimestampConverter() FieldValue serverTimeStamp}) {
     return _NoteDTO(
       id: id,
       body: body,
       color: color,
       todos: todos,
-      serverTimestamp: serverTimestamp,
+      serverTimeStamp: serverTimeStamp,
     );
   }
 
@@ -51,7 +51,7 @@ mixin _$NoteDTO {
   List<TodoItemDTO>
       get todos; // Specific for firestore Placeholder -> Time to server (DATETIME)
   @ServerTimestampConverter()
-  FieldValue get serverTimestamp;
+  FieldValue get serverTimeStamp;
 
   Map<String, dynamic> toJson();
   $NoteDTOCopyWith<NoteDTO> get copyWith;
@@ -66,7 +66,7 @@ abstract class $NoteDTOCopyWith<$Res> {
       String body,
       int color,
       List<TodoItemDTO> todos,
-      @ServerTimestampConverter() FieldValue serverTimestamp});
+      @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
 /// @nodoc
@@ -83,16 +83,16 @@ class _$NoteDTOCopyWithImpl<$Res> implements $NoteDTOCopyWith<$Res> {
     Object body = freezed,
     Object color = freezed,
     Object todos = freezed,
-    Object serverTimestamp = freezed,
+    Object serverTimeStamp = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       body: body == freezed ? _value.body : body as String,
       color: color == freezed ? _value.color : color as int,
       todos: todos == freezed ? _value.todos : todos as List<TodoItemDTO>,
-      serverTimestamp: serverTimestamp == freezed
-          ? _value.serverTimestamp
-          : serverTimestamp as FieldValue,
+      serverTimeStamp: serverTimeStamp == freezed
+          ? _value.serverTimeStamp
+          : serverTimeStamp as FieldValue,
     ));
   }
 }
@@ -107,7 +107,7 @@ abstract class _$NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
       String body,
       int color,
       List<TodoItemDTO> todos,
-      @ServerTimestampConverter() FieldValue serverTimestamp});
+      @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
 /// @nodoc
@@ -125,16 +125,16 @@ class __$NoteDTOCopyWithImpl<$Res> extends _$NoteDTOCopyWithImpl<$Res>
     Object body = freezed,
     Object color = freezed,
     Object todos = freezed,
-    Object serverTimestamp = freezed,
+    Object serverTimeStamp = freezed,
   }) {
     return _then(_NoteDTO(
       id: id == freezed ? _value.id : id as String,
       body: body == freezed ? _value.body : body as String,
       color: color == freezed ? _value.color : color as int,
       todos: todos == freezed ? _value.todos : todos as List<TodoItemDTO>,
-      serverTimestamp: serverTimestamp == freezed
-          ? _value.serverTimestamp
-          : serverTimestamp as FieldValue,
+      serverTimeStamp: serverTimeStamp == freezed
+          ? _value.serverTimeStamp
+          : serverTimeStamp as FieldValue,
     ));
   }
 }
@@ -148,11 +148,11 @@ class _$_NoteDTO extends _NoteDTO {
       @required this.body,
       @required this.color,
       @required this.todos,
-      @required @ServerTimestampConverter() this.serverTimestamp})
+      @required @ServerTimestampConverter() this.serverTimeStamp})
       : assert(body != null),
         assert(color != null),
         assert(todos != null),
-        assert(serverTimestamp != null),
+        assert(serverTimeStamp != null),
         super._();
 
   factory _$_NoteDTO.fromJson(Map<String, dynamic> json) =>
@@ -169,11 +169,11 @@ class _$_NoteDTO extends _NoteDTO {
   final List<TodoItemDTO> todos;
   @override // Specific for firestore Placeholder -> Time to server (DATETIME)
   @ServerTimestampConverter()
-  final FieldValue serverTimestamp;
+  final FieldValue serverTimeStamp;
 
   @override
   String toString() {
-    return 'NoteDTO(id: $id, body: $body, color: $color, todos: $todos, serverTimestamp: $serverTimestamp)';
+    return 'NoteDTO(id: $id, body: $body, color: $color, todos: $todos, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -188,9 +188,9 @@ class _$_NoteDTO extends _NoteDTO {
                 const DeepCollectionEquality().equals(other.color, color)) &&
             (identical(other.todos, todos) ||
                 const DeepCollectionEquality().equals(other.todos, todos)) &&
-            (identical(other.serverTimestamp, serverTimestamp) ||
+            (identical(other.serverTimeStamp, serverTimeStamp) ||
                 const DeepCollectionEquality()
-                    .equals(other.serverTimestamp, serverTimestamp)));
+                    .equals(other.serverTimeStamp, serverTimeStamp)));
   }
 
   @override
@@ -200,7 +200,7 @@ class _$_NoteDTO extends _NoteDTO {
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(color) ^
       const DeepCollectionEquality().hash(todos) ^
-      const DeepCollectionEquality().hash(serverTimestamp);
+      const DeepCollectionEquality().hash(serverTimeStamp);
 
   @override
   _$NoteDTOCopyWith<_NoteDTO> get copyWith =>
@@ -219,7 +219,7 @@ abstract class _NoteDTO extends NoteDTO {
           @required String body,
           @required int color,
           @required List<TodoItemDTO> todos,
-          @required @ServerTimestampConverter() FieldValue serverTimestamp}) =
+          @required @ServerTimestampConverter() FieldValue serverTimeStamp}) =
       _$_NoteDTO;
 
   factory _NoteDTO.fromJson(Map<String, dynamic> json) = _$_NoteDTO.fromJson;
@@ -235,7 +235,7 @@ abstract class _NoteDTO extends NoteDTO {
   List<TodoItemDTO> get todos;
   @override // Specific for firestore Placeholder -> Time to server (DATETIME)
   @ServerTimestampConverter()
-  FieldValue get serverTimestamp;
+  FieldValue get serverTimeStamp;
   @override
   _$NoteDTOCopyWith<_NoteDTO> get copyWith;
 }

@@ -423,9 +423,9 @@ class _$NoteWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  _LoadSuccess loadSuccess(KtList<Note> note) {
+  _LoadSuccess loadSuccess(KtList<Note> notes) {
     return _LoadSuccess(
-      note,
+      notes,
     );
   }
 
@@ -447,14 +447,14 @@ mixin _$NoteWatcherState {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Note> note),
+    @required TResult loadSuccess(KtList<Note> notes),
     @required TResult loadFailure(NoteFailure noteFailure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Note> note),
+    TResult loadSuccess(KtList<Note> notes),
     TResult loadFailure(NoteFailure noteFailure),
     @required TResult orElse(),
   });
@@ -530,7 +530,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Note> note),
+    @required TResult loadSuccess(KtList<Note> notes),
     @required TResult loadFailure(NoteFailure noteFailure),
   }) {
     assert(initial != null);
@@ -545,7 +545,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Note> note),
+    TResult loadSuccess(KtList<Note> notes),
     TResult loadFailure(NoteFailure noteFailure),
     @required TResult orElse(),
   }) {
@@ -633,7 +633,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Note> note),
+    @required TResult loadSuccess(KtList<Note> notes),
     @required TResult loadFailure(NoteFailure noteFailure),
   }) {
     assert(initial != null);
@@ -648,7 +648,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Note> note),
+    TResult loadSuccess(KtList<Note> notes),
     TResult loadFailure(NoteFailure noteFailure),
     @required TResult orElse(),
   }) {
@@ -700,7 +700,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({KtList<Note> note});
+  $Res call({KtList<Note> notes});
 }
 
 /// @nodoc
@@ -716,37 +716,37 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object note = freezed,
+    Object notes = freezed,
   }) {
     return _then(_LoadSuccess(
-      note == freezed ? _value.note : note as KtList<Note>,
+      notes == freezed ? _value.notes : notes as KtList<Note>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.note) : assert(note != null);
+  const _$_LoadSuccess(this.notes) : assert(notes != null);
 
   @override
-  final KtList<Note> note;
+  final KtList<Note> notes;
 
   @override
   String toString() {
-    return 'NoteWatcherState.loadSuccess(note: $note)';
+    return 'NoteWatcherState.loadSuccess(notes: $notes)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.note, note) ||
-                const DeepCollectionEquality().equals(other.note, note)));
+            (identical(other.notes, notes) ||
+                const DeepCollectionEquality().equals(other.notes, notes)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(note);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(notes);
 
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
@@ -757,14 +757,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Note> note),
+    @required TResult loadSuccess(KtList<Note> notes),
     @required TResult loadFailure(NoteFailure noteFailure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loadSuccess(note);
+    return loadSuccess(notes);
   }
 
   @override
@@ -772,13 +772,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Note> note),
+    TResult loadSuccess(KtList<Note> notes),
     TResult loadFailure(NoteFailure noteFailure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
-      return loadSuccess(note);
+      return loadSuccess(notes);
     }
     return orElse();
   }
@@ -816,9 +816,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements NoteWatcherState {
-  const factory _LoadSuccess(KtList<Note> note) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Note> notes) = _$_LoadSuccess;
 
-  KtList<Note> get note;
+  KtList<Note> get notes;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -897,7 +897,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Note> note),
+    @required TResult loadSuccess(KtList<Note> notes),
     @required TResult loadFailure(NoteFailure noteFailure),
   }) {
     assert(initial != null);
@@ -912,7 +912,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Note> note),
+    TResult loadSuccess(KtList<Note> notes),
     TResult loadFailure(NoteFailure noteFailure),
     @required TResult orElse(),
   }) {
