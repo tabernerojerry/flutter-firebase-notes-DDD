@@ -7,6 +7,7 @@ analyzer:
     must_be_immutable: error
     sort_unnamed_constructors_first: ignore
     sized_box_for_whitespace: ignore
+    sort_pub_dependencies: ignore
 
   exclude:
     - "**.*.g.dart"
