@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:notes_firebase_ddd/application/notes/note_actor/note_actor_bloc.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:notes_firebase_ddd/domain/notes/note.dart';
 import 'package:notes_firebase_ddd/domain/notes/todo_item.dart';
+import 'package:notes_firebase_ddd/presentation/routes/router.gr.dart';
 
 class NoteCardWidget extends StatelessWidget {
   final Note note;
@@ -20,7 +22,7 @@ class NoteCardWidget extends StatelessWidget {
       color: note.color.getOrCrash(),
       child: InkWell(
         onTap: () {
-          // TODO: Implement Navigation
+          ExtendedNavigator.of(context).pushNoteFormPage(editNote: note);
         },
         onLongPress: () {
           final noteActorBloc = context.read<NoteActorBloc>();
