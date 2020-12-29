@@ -47,7 +47,7 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   auto_route_generator: ^0.6.10
-  build_runner: null
+  build_runner:
   freezed: ^0.12.6
   injectable_generator: ^1.0.6
   json_serializable: ^3.5.1
