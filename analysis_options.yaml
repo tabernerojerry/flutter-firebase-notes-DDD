@@ -10,6 +10,6 @@ analyzer:
     sort_pub_dependencies: ignore
 
   exclude:
-    - "**.*.g.dart"
-    - "**.*.gr.dart"
-    - "**.*.freezed.dart"
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"
