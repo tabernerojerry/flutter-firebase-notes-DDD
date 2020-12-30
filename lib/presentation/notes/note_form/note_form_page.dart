@@ -7,9 +7,12 @@ import 'package:notes_firebase_ddd/application/notes/note_form/note_form_bloc.da
 
 import 'package:notes_firebase_ddd/domain/notes/note.dart';
 import 'package:notes_firebase_ddd/injection.dart';
+import 'package:notes_firebase_ddd/presentation/notes/note_form/miscellaneous/todo_item_presentation_classes.dart';
+import 'package:notes_firebase_ddd/presentation/notes/note_form/widgets/add_todo_tile_widget.dart';
 import 'package:notes_firebase_ddd/presentation/notes/note_form/widgets/body_field_widget.dart';
 import 'package:notes_firebase_ddd/presentation/notes/note_form/widgets/color_field_widget.dart';
 import 'package:notes_firebase_ddd/presentation/routes/router.gr.dart';
+import 'package:provider/provider.dart';
 
 class NoteFormPage extends StatelessWidget {
   final Note editNote;
@@ -137,14 +140,18 @@ class NoteFormPageScaffold extends StatelessWidget {
         buildWhen: (previousState, currentState) =>
             previousState.showErrorMessages != currentState.showErrorMessages,
         builder: (context, state) {
-          return Form(
-            autovalidateMode: AutovalidateMode.always,
-            child: SingleChildScrollView(
-              child: Column(
-                children: const <Widget>[
-                  BodyFieldWidget(),
-                  ColorFieldWidget(),
-                ],
+          return ChangeNotifierProvider(
+            create: (_) => FormTodos(),
+            child: Form(
+              autovalidateMode: AutovalidateMode.always,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: const <Widget>[
+                    BodyFieldWidget(),
+                    ColorFieldWidget(),
+                    AddTodoTileWidget()
+                  ],
+                ),
               ),
             ),
           );
